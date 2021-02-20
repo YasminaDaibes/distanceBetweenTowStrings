@@ -1,0 +1,14 @@
+public static int distance(String s1, String s2){
+        return distance(s1,s2,0);
+}
+    
+private static int distance(String s1, String s2,int count){
+        if( s1.isEmpty() )
+            return (count+s2.length());
+        if( s2.isEmpty() && !s1.isEmpty() )
+            return -1;
+        if(s1.charAt(0)==s2.charAt(0))
+            return distance(s1.substring(1),s2.substring(1),count);
+            else
+                return distance(s1,s2.substring(1),count+1);
+}
